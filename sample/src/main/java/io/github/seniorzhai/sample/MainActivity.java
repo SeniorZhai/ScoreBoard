@@ -21,17 +21,17 @@ public class MainActivity extends AppCompatActivity {
         startView2 = (ScoreBoard) findViewById(R.id.startView2);
     }
 
-    public void begin(View v) {
-        startView.to();
-        startView1.to();
-        startView2.to();
+    public void start(View v) {
+        startView.start();
+        startView1.start();
+        startView2.start();
     }
 
-    public void changer(View v) {
+    public void change(View v) {
         Random random = new Random();
-        startView.changer(random.nextInt(100));
-        startView1.changer(random.nextInt(100));
-        startView2.changer(random.nextInt(100));
+        startView.change(random.nextInt(100));
+        startView1.change(random.nextInt(100));
+        startView2.change(random.nextInt(100));
     }
 
 }

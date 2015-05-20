@@ -71,11 +71,10 @@ public class ScoreBoard extends FrameLayout {
         rectF.top = 0 + lineWidth / 2;
         rectF.right = getWidth() - lineWidth / 2;
         rectF.bottom = getHeight() - lineWidth / 2;
-        canvas.drawArc(rectF, 0, act, false, mPaint);
+        canvas.drawArc(rectF, 0, angle, false, mPaint);
     }
 
     private int width;
-    private int itemHeight;
 
     private void customLayout() {
         if (linearLayout != null) {
@@ -97,41 +96,42 @@ public class ScoreBoard extends FrameLayout {
         listView2.setLayoutParams(new LinearLayout.LayoutParams(width / 5, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
         topLinear.addView(listView1);
         topLinear.addView(listView2);
-        TextView tv = new TextView(mContext);
-        tv.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, width / 2, 1f));
-        tv.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
-        tv.setTextSize((float) (width / 2 / density / 2));
-        tv.setText("PASSES");
-        tv.setTextColor(Color.WHITE);
+        contetTV = new TextView(mContext);
+        contetTV.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, width / 2, 1f));
+        contetTV.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
+        contetTV.setTextSize(width / 2 / density / 2);
+        contetTV.setText("PASSES");
+        contetTV.setTextColor(Color.WHITE);
         linearLayout.addView(topLinear);
-        linearLayout.addView(tv);
+        linearLayout.addView(contetTV);
         addView(linearLayout);
     }
 
     private LinearLayout linearLayout;
+    private TextView contetTV;
     private NumberListView listView1, listView2;
 
 
-    public void to() {
-        ObjectAnimator objectAnimator = ObjectAnimator.ofInt(this, "act", 360);
+    public void start() {
+        ObjectAnimator objectAnimator = ObjectAnimator.ofInt(this, "angle", 360);
         objectAnimator.setDuration(360);
         objectAnimator.start();
     }
 
 
-    public void changer(int i) {
+    public void change(int i) {
         listView1.setFirstItemId(i / 10, 300);
         listView2.setFirstItemId(i % 10, 400);
     }
 
-    public void setAct(int act) {
-        this.act = act;
+    public void setAngle(int angle) {
+        this.angle = angle;
         invalidate();
     }
 
-    public int getAct() {
-        return act;
+    public int getAngle() {
+        return angle;
     }
 
-    private int act = 0;
+    private int angle = 0;
 }
