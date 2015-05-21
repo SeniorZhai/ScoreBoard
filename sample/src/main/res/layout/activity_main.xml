@@ -24,7 +24,7 @@
         android:id="@+id/startView1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:forecolor="@android:color/transparent" />
+        app:backcolor="@android:color/transparent" />
 
     <org.seniorzhai.scoreboard.ScoreBoard
         android:id="@+id/startView2"
