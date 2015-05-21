@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.0"
+version = "1.0.1"
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -36,7 +36,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'Android ScoreBoard' 	//项目描述
+                name 'Android ScoreBoard'    //项目描述
                 url siteUrl
                 // Set your license
                 licenses {
@@ -47,7 +47,7 @@ install {
                 }
                 developers {
                     developer {
-                        id 'SeniorZhai'		//填写的一些基本信息
+                        id 'SeniorZhai'        //填写的一些基本信息
                         name 'SeniorZhai'
                         email '370985116@qq.com'
                     }
@@ -85,7 +85,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "ScoreBoard"	//发布到JCenter上的项目名字
+        name = "ScoreBoard"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]

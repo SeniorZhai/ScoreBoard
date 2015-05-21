@@ -19,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
         startView = (ScoreBoard) findViewById(R.id.startView);
         startView1 = (ScoreBoard) findViewById(R.id.startView1);
         startView2 = (ScoreBoard) findViewById(R.id.startView2);
+        startView1.setText("BCS");
+        startView2.setText("BBC");
     }
 
     public void start(View v) {
         startView.start();
         startView1.start();
-        startView2.start();
+        startView2.start(new Random().nextFloat());
+        startView2.change(new Random().nextInt(100));
     }
 
     public void change(View v) {

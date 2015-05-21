@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScoreBoard">
+        <attr name="contentText" format="string" />
+        <attr name="backcolor" format="color" />
+        <attr name="forecolor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+    </declare-styleable>
+</resources>
